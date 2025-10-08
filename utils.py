@@ -236,7 +236,8 @@ def parse_filename(filename: str, bf_suffix: str, fl_suffix: str) -> tuple[str, 
         extension = pieces[-1]
 
         name_pieces = name.split("_")
-        sample_name = name_pieces[0]
+        sample_name = name_pieces[0:-1] #new
+        #sample_name = name_pieces[0] former
         img_type = name_pieces[-1]
 
     except Exception as e:
