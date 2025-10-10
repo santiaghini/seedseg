@@ -177,7 +177,7 @@ def build_results_csv(results: list[Result]) -> list[list[str | float | int | No
             result.ratio_marker_total,
             result.chisquare,
             result.pvalue,
-            round(result.bf_thresh, 2),
+            result.bf_thresh,
             round(result.marker_thresh, 2),
             round(result.radial_threshold, 2),
             round(result.radial_threshold_ratio, 2),
@@ -199,7 +199,7 @@ def store_results(
     """Write ``results`` to ``batch_output_dir`` and return the CSV path."""
     results_csv = build_results_csv(results)
 
-    bf_thresh = results[0].bf_thresh
+    bf_thresh = round(results[0].bf_thresh,2)
     marker_thresh = results[0].marker_thresh
     radial_ratio = results[0].radial_threshold_ratio
 
