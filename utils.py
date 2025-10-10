@@ -174,7 +174,7 @@ def build_results_csv(results: list[Result]) -> list[list[str | float | int | No
             result.marker_seeds,
             result.non_marker_seeds,
             result.total_seeds,
-            round(result.ratio_marker_total, 2),
+            result.ratio_marker_total,
             round(result.chisquare, 4),
             round(result.pvalue, 4),
             round(result.bf_thresh, 2),
