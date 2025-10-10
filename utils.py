@@ -199,7 +199,7 @@ def store_results(
     """Write ``results`` to ``batch_output_dir`` and return the CSV path."""
     results_csv = build_results_csv(results)
 
-    bf_thresh = round(results[0].bf_thresh,2)
+    bf_thresh = results[0].bf_thresh
     marker_thresh = results[0].marker_thresh
     radial_ratio = results[0].radial_threshold_ratio
 
