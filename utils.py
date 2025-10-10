@@ -123,21 +123,21 @@ class Result:
     @property
     def ratio_marker_total(self) -> float | None:
         if self.total_seeds and self.marker_seeds:
-            return self.marker_seeds / self.total_seeds
+            return round(self.marker_seeds / self.total_seeds, 2)
         return None
 
     @property
     def chisquare(self) -> float | None:
         if self.total_seeds and self.marker_seeds:
             _chisquare, _pvalue = compute_chi2(self, self.target_ratio)
-            return _chisquare
+            return round(_chisquare,4)
         return None
 
     @property
     def pvalue(self) -> float | None:
         if self.total_seeds and self.marker_seeds:
             _chisquare, _pvalue = compute_chi2(self, self.target_ratio)
-            return _pvalue
+            return round(_pvalue,4)
         return None
 
 
@@ -175,8 +175,8 @@ def build_results_csv(results: list[Result]) -> list[list[str | float | int | No
             result.non_marker_seeds,
             result.total_seeds,
             result.ratio_marker_total,
-            round(result.chisquare, 4),
-            round(result.pvalue, 4),
+            result.chisquare,
+            result.pvalue,
             round(result.bf_thresh, 2),
             round(result.marker_thresh, 2),
             round(result.radial_threshold, 2),
