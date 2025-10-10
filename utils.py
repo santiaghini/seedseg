@@ -129,6 +129,7 @@ class Result:
     @property
     def chisquare(self) -> float | None:
         if self.total_seeds and self.marker_seeds:
+            print("total_seeds=", self.total_seeds)
             _chisquare, _pvalue = compute_chi2(self, self.target_ratio)
             return _chisquare
         return None
