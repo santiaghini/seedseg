@@ -129,15 +129,16 @@ class Result:
     @property
     def chisquare(self) -> float | None:
         if self.total_seeds and self.marker_seeds:
-            print("total_seeds=", self.total_seeds)
             _chisquare, _pvalue = compute_chi2(self, self.target_ratio)
             return _chisquare
         return None
 
     @property
     def pvalue(self) -> float | None:
-        _chisquare, _pvalue = compute_chi2(self, self.target_ratio)
-        return _pvalue
+        if self.total_seeds and self.marker_seeds:
+            _chisquare, _pvalue = compute_chi2(self, self.target_ratio)
+            return _pvalue
+        return None
 
 
 def compute_chi2(result: Result, expected_ratio: float) -> tuple[float, float]:
