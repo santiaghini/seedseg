@@ -1,6 +1,6 @@
 # SeedSeg
 
-[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://seed-counter-brophy.streamlit.app)
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://seedseg-brophy.streamlit.app)
 
 SeedSeg is a tool that counts the number of seeds in an image. This tool was developed for segregation analysis of transgenic Arabidopsis lines to identify lines with a single T-DNA locus, and as such is optimized for counting the number of transgenic seeds expressing a visible marker (fluorescence or pigment) in a mixed pool of seeds with and without the marker.
 
