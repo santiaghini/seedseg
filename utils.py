@@ -217,7 +217,7 @@ def store_results(
 
     output_path = os.path.join(batch_output_dir, filename)
 
-    os.makedirs(batch_output_dir, exist_ok=True)
+    
     with open(output_path, "w") as f:
         for row in results_csv:
             f.write(",".join([f"{r}" for r in row]) + "\n")

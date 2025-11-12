@@ -370,6 +370,8 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
 
+    os.makedirs(args.output, exist_ok=True)
+
     if args.intensity_thresh is not None:
         try:
             bf_thresh, fl_thresh = [int(x) for x in args.intensity_thresh.split(",")]
